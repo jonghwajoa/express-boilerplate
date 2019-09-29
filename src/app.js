@@ -24,15 +24,15 @@ app.set('trust proxy', 1);
 app.use('/', route);
 
 app.use((req, res, next) => {
-   const error = new Error('404 PAGE NOT FOUND');
-   error.status = 404;
-   return next(error);
+  const error = new Error('404 PAGE NOT FOUND');
+  error.status = 404;
+  return next(error);
 });
 
 app.use((err, req, res, next) => {
-   const status = err.status || 500;
-   const message = err.message || 'Internal Server Error';
-   return res.status(status).json({ message });
+  const status = err.status || 500;
+  const message = err.message || 'Internal Server Error';
+  return res.status(status).json({ message });
 });
 
 export default app;
