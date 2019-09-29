@@ -15,9 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/jonghwajoa/express-boilerplate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "express es6+",
+    "express boilerplate"
+  ],
+  "author": "jonghwa",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jonghwajoa/express-boilerplate/issues"
   },
