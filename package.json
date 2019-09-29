@@ -4,6 +4,7 @@
   "description": "express-boilerplate",
   "main": "src/bin/www.js",
   "scripts": {
+    "start": "nodemon --exec babel-node src/bin/www.js --config nodemon.json",
     "dev": "nodemon --exec babel-node src/bin/www.js --config nodemon.json",
     "build": "webpack -w"
   },
