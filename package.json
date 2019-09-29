@@ -31,6 +31,8 @@
     "@babel/node": "^7.6.2",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "babel-loader": "^8.0.6",
     "nodemon": "^1.19.2",
     "prettier": "1.18.2",
@@ -44,5 +46,15 @@
     "express": "^4.17.1",
     "helmet": "^3.21.1",
     "serve-favicon": "^2.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
