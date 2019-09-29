@@ -46,15 +46,5 @@
     "express": "^4.17.1",
     "helmet": "^3.21.1",
     "serve-favicon": "^2.5.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
