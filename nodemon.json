@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "ignore": ["dist/*"],
+  "delay": "3000"
+}
