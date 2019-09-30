@@ -11,5 +11,9 @@ rm -rf .git
 
 npm install
 
-http://localhost/
+npm install -g sass
+
+npm start
+
+http://localhost:3000/
 ```
