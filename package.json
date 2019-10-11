@@ -5,8 +5,8 @@
   "main": "src/bin/www.js",
   "scripts": {
     "start": "nodemon --config nodemon.json",
-    "production": "set NODE_ENV=production babel-node src/bin/www.js",
     "dev": "nodemon --config nodemon.json",
+    "production": "set NODE_ENV=production babel-node src/bin/www.js",
     "scss": "sass ./src/public/scss:./src/public/css",
     "test": "mocha --recursive ./test/*.spec.js"
   },
@@ -39,7 +39,7 @@
     "@commitlint/config-conventional": "^8.2.0",
     "babel-loader": "^8.0.6",
     "husky": "^3.0.7",
-    "lint-staged": "^9.4.2",
+    "lint-staged": "^10.0.0-0",
     "mocha": "^6.2.1",
     "nodemon": "^1.19.2",
     "precise-commits": "^1.0.2",
