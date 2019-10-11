@@ -2,11 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
-import favicon from 'serve-favicon';
+// import favicon from 'serve-favicon';
 import route from './route/index';
+
 dotenv.config();
 
 const path = require('path');
+
 const app = express();
 
 app.use(express.static('dist'));

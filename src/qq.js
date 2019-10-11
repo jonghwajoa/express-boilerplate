@@ -1,5 +1,3 @@
-const qq = () => {
-  return 'q';
-};
+const qq = () => 'q';
 
 module.exports = qq;
