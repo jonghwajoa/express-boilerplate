@@ -7,7 +7,8 @@
     "start": "nodemon --config nodemon.json",
     "production": "set NODE_ENV=production babel-node src/bin/www.js",
     "dev": "nodemon --config nodemon.json",
-    "scss": "sass ./src/public/scss:./src/public/css"
+    "scss": "sass ./src/public/scss:./src/public/css",
+    "test": "mocha --recursive ./test/*.spec.js"
   },
   "engines": {
     "node": "10.16.0",
@@ -39,10 +40,12 @@
     "babel-loader": "^8.0.6",
     "husky": "^3.0.7",
     "lint-staged": "^9.4.2",
+    "mocha": "^6.2.1",
     "nodemon": "^1.19.2",
     "precise-commits": "^1.0.2",
     "prettier": "1.18.2",
-    "pretty-quick": "^1.11.1"
+    "pretty-quick": "^1.11.1",
+    "should": "^13.2.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
