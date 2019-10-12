@@ -1,7 +1,7 @@
 import app from '../app';
-import { dbSync } from '../database/index';
+import dbSync from './dbSync';
 
-dbSync().then(() => {
+dbSync({ force: false }).then(() => {
   app.listen(3000, () => {
     console.log('Server start');
   });

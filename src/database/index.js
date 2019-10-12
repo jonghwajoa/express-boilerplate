@@ -1,19 +1,32 @@
 import fs from 'fs';
 import path from 'path';
+import Sequelize from 'sequelize';
+import configs from '../config/config';
 
-const MODEL_DIRECTORY = './model';
+const env = process.env.NODE_ENV || 'development';
+const config = configs[env];
+const db = {};
+const { database, username, password } = config;
 
-const models = {};
+const sequelize = new Sequelize(database, username, password, config);
+const MODEL_DIRECTORY = '/models';
 
-const dbSync = async () => {
-  const directoryFiles = fs.readdirSync(path.resolve(__dirname, MODEL_DIRECTORY));
-  const modelFiles = directoryFiles.filter(file => file.slice(-3) === '.js');
+const directoryFiles = fs.readdirSync(path.join(__dirname, MODEL_DIRECTORY));
+const modelFiles = directoryFiles.filter(file => file.slice(-3) === '.js');
 
-  for await (const file of modelFiles) {
-    const model = await import(`${MODEL_DIRECTORY}/${file}`);
-    const tableName = file.substr(0, file.length - 3);
-    models[tableName] = model;
+modelFiles.forEach(file => {
+  // eslint-disable-next-line no-path-concat
+  const model = sequelize.import(path.join(__dirname + MODEL_DIRECTORY, file));
+  db[model.name] = model;
+});
+
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
   }
-};
+});
 
-export { models, dbSync };
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+export default db;
