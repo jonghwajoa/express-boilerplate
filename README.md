@@ -26,6 +26,7 @@ http://localhost:3000/
 
 ```js
 COOKIE_SECRET=
+PORT=
 
 DB_DEV_USERNAME=
 DB_DEV_PW=
